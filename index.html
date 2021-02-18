@@ -4,21 +4,54 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Bounce Shot</title>
-     
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAfLXMd3t4wkyQQ64G5YKrm56O4DqwTo-g",
+        authDomain: "bounce-shot-6e7e5.firebaseapp.com",
+        databaseURL: "https://bounce-shot-6e7e5-default-rtdb.firebaseio.com",
+        projectId: "bounce-shot-6e7e5",
+        storageBucket: "bounce-shot-6e7e5.appspot.com",
+        messagingSenderId: "860528472993",
+        appId: "1:860528472993:web:788b0f27870df5314391e0",
+        measurementId: "G-517BJSWLZ3"
+      };
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+    </script>
   </head>
   <body style="text-align: center">
     <canvas id="unity-canvas" style="width: 1024px; height: 576px; background: #231F20"></canvas>
      <!-- progress bar -->
-     
+     <div id="loader" class="loader">
+      <div class="progressbar">
+         <div id="fill" class="fill" style="width: 0%;"></div>
+      </div>
    </div>
-  
-    <script src="Build/WebPublish.loader.js"></script>
+   <script>
+    // Custom progressbar function
+    function customProgress(unityInstance, progress) {
+       // Change fill of the progress bar
+       const fill = document.getElementById("fill");
+       fill.style.width = progress * 100 + "%";
+
+       // If loaded, remove loader
+       if (progress === 1) {
+          const loader = document.getElementById("loader");
+          loader.remove();
+       }
+    }
+ </script>
+    <script src="Build/WebPublish2.loader.js"></script>
     <script>
  
     createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/WebPublish.data.gz",
-        frameworkUrl: "Build/WebPublish.framework.js.gz",
-        codeUrl: "Build/WebPublish.wasm.gz",
+        dataUrl: "Build/WebPublish2.data",
+        frameworkUrl: "Build/WebPublish2.framework.js",
+        codeUrl: "Build/WebPublish2.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Bounce Shot",
