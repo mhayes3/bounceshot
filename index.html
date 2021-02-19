@@ -8,6 +8,9 @@
 
       <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
     <script>
+      function compareNumbers(a, b) {
+          return a.score - b.score;
+        }
         // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyAfLXMd3t4wkyQQ64G5YKrm56O4DqwTo-g",
@@ -23,28 +26,9 @@
       var database = firebase.database();
     </script>
   </head>
-  <body style="text-align: center">
-    <canvas id="unity-canvas" style="width: 1024px; height: 576px; background: #020202"></canvas>
-     <!-- progress bar -->
-     <div id="loader" class="loader">
-      <div class="progressbar">
-         <div id="fill" class="fill" style="width: 0%;"></div>
-      </div>
-   </div>
-   <script>
-    // Custom progressbar function
-    function customProgress(unityInstance, progress) {
-       // Change fill of the progress bar
-       const fill = document.getElementById("fill");
-       fill.style.width = progress * 100 + "%";
-
-       // If loaded, remove loader
-       if (progress === 1) {
-          const loader = document.getElementById("loader");
-          loader.remove();
-       }
-    }
- </script>
+  <body style="text-align: center; background-color: black;">
+    <canvas id="unity-canvas" style="width: 1280px; height: 720px; background: #020202"></canvas>
+    
     <script src="Build/WebBuild.loader.js"></script>
     <script>
  
