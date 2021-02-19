@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "860528472993",
+    "firebase_url": "https://bounce-shot-6e7e5-default-rtdb.firebaseio.com",
+    "project_id": "bounce-shot-6e7e5",
+    "storage_bucket": "bounce-shot-6e7e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860528472993:android:45e134e8bde7a92f4391e0",
+        "android_client_info": {
+          "package_name": "com.mhayes.bounceshot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860528472993-6bkd2leuthic37krogsp3qqj4n2ih6gs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAS_L3ksPvbT5U8bcUDpf-2m-Wgmhb2EI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860528472993-6bkd2leuthic37krogsp3qqj4n2ih6gs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

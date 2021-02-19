@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Bounce Shot</title>
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+
+    <script>
+      function compareNumbers(a, b) {
+          return a.score - b.score;
+        }
+        // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAfLXMd3t4wkyQQ64G5YKrm56O4DqwTo-g",
+        authDomain: "bounce-shot-6e7e5.firebaseapp.com",
+        databaseURL: "https://bounce-shot-6e7e5-default-rtdb.firebaseio.com",
+        projectId: "bounce-shot-6e7e5",
+        storageBucket: "bounce-shot-6e7e5.appspot.com",
+        messagingSenderId: "860528472993",
+        appId: "1:860528472993:web:788b0f27870df5314391e0",
+        measurementId: "G-517BJSWLZ3"
+      };
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+    </script>
+  </head>
+  <body style="text-align: center; background-color: black;">
+    <canvas id="unity-canvas" style="width: 1280px; height: 720px; background: #020202"></canvas>
+    
+    <script src="Build/WebBuild.loader.js"></script>
+    <script>
+ 
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/WebBuild.data.unityweb",
+        frameworkUrl: "Build/WebBuild.framework.js.unityweb",
+        codeUrl: "Build/WebBuild.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Bounce Shot",
+        productVersion: "0.1",
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+      });
+    </script>
+  </body>
+</html>
