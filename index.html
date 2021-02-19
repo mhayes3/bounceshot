@@ -24,7 +24,7 @@
     </script>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" style="width: 1024px; height: 576px; background: #231F20"></canvas>
+    <canvas id="unity-canvas" style="width: 1024px; height: 576px; background: #020202"></canvas>
      <!-- progress bar -->
      <div id="loader" class="loader">
       <div class="progressbar">
@@ -45,13 +45,13 @@
        }
     }
  </script>
-    <script src="Build/WebPublish2.loader.js"></script>
+    <script src="Build/WebBuild.loader.js"></script>
     <script>
  
     createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/WebPublish2.data",
-        frameworkUrl: "Build/WebPublish2.framework.js",
-        codeUrl: "Build/WebPublish2.wasm",
+        dataUrl: "Build/WebBuild.data.unityweb",
+        frameworkUrl: "Build/WebBuild.framework.js.unityweb",
+        codeUrl: "Build/WebBuild.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Bounce Shot",
